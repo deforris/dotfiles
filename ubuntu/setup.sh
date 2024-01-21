@@ -45,7 +45,9 @@ ansible --version
 echo "********** Finished Ansible Install Check. **********" 
 echo
 echo "********** Starting Install of Packages I need. **********" 
-apt install chromium-browser ffmpeg flameshot fzf gimp git gnome-tweaks neovim nmap ripgrep screenkey stow sway tldr tmux tree wireshark zsh -y
+apt install chromium-browser ffmpeg flameshot fzf gimp git gnome-tweaks gzip neovim nmap ripgrep scdoc screenkey stow sway tldr tmux tree wireshark zsh -y
+echo alacritty specific
+apk add cmake pkgconf freetype-dev fontconfig-dev python3 libxcb-dev -y
 echo "********** Finished Install of Packages I need. **********" 
 echo
 echo "********** Starting Install of ohmyzsh. **********" 
@@ -107,7 +109,12 @@ mv Everforest-GTK-Theme/icons/Everforest-Dark /usr/share/icons/
 rm -rf Everforest-GTK-Theme
 echo "********** Finished Install of Everforest-GTK-Theme. **********" 
 echo
+echo "********** Starting Install of Rust. **********" 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+echo "********** Finished Install of Rust. **********" 
+echo
 echo "********** Starting Install of Alacritty. **********" 
-
+echo "Go install. Then continue. I dont feel like fixing this because its probablly too prone to change"
+read
 echo "********** Finished Install of Alacritty. **********" 
 echo
