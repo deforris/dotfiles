@@ -45,7 +45,7 @@ ansible --version
 echo "********** Finished Ansible Install Check. **********" 
 echo
 echo "********** Starting Install of Packages I need. **********" 
-apt install chromium-browser ffmpeg flameshot fzf gimp git gnome-tweaks gzip neovim nmap ripgrep scdoc screenkey stow sway tldr tmux tree wireshark zsh -y
+apt install brightnessctl chromium-browser ffmpeg flameshot fzf gimp git gnome-tweaks gzip neovim nmap ripgrep scdoc screenkey stow sway tldr tmux tree wireshark zsh -y
 echo alacritty specific
 apk add cmake pkgconf freetype-dev fontconfig-dev python3 libxcb-dev -y
 echo "********** Finished Install of Packages I need. **********" 

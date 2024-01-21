@@ -14,6 +14,9 @@ include /etc/sway/config-vars.d/*
 font pango:Hack 10
 ### Wallpaper
 output * bg /usr/share/backgrounds/blackbackgroundmassive.png fill
+### Brightness
+bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
 ### Idle configuration
 exec swayidle -w \
      timeout 300 'swaylock -f -c 000000' \
@@ -102,18 +105,36 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-# Status Bar: `man 5 sway-bar` for more...
+### Coloring:
+# class                 border  backgr. text    indicator child_border
+client.focused          #384B55 #3F5865 #D3C6AA #3A94C5   #384B55
+client.focused_inactive #414B50 #495156 #D3C6AA #414B50   #495156
+client.unfocused        #414B50 #272e33 #9DA9A0 #272E33   #272e33
+client.urgent           #2f343a #E67E80 #D3C6AA #E67E80   #E67E80
+client.placeholder      #293136 #1E2326 #D3C6AA #293136   #1E2326
+client.background       #D3C6AA
+### Window Configuration
+default_border pixel 2  	
+### Status Bar: `man 5 sway-bar` for more...
 bar {
+    font pango:Hack 10
     position top
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    status_command while ~/.config/sway/bar.sh; do sleep 1; done 
 
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+        background #1E2326
+        statusline #D3C6AA
+        separator #495156
+
+        focused_workspace  #384B55 #3F5865 #D3C6AA
+        active_workspace   #414B50 #5f676a #D3C6AA
+        inactive_workspace #414B50 #272E33 #9DA9A0
+        urgent_workspace   #374145 #E67E80 #D3C6AA
+        binding_mode       #374145 #E67E80 #D3C6AA
+
+   }
 }
 
 include /etc/sway/config.d/*
