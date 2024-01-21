@@ -14,9 +14,18 @@ include /etc/sway/config-vars.d/*
 font pango:Hack 10
 ### Wallpaper
 output * bg /usr/share/backgrounds/blackbackgroundmassive.png fill
+### Audio
+bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 1%+ unmute && $refresh_i3status
+bindsym XF86AudioLowerVolume exec amixer sset 'Master' 1%- unmute && $refresh_i3status
+bindsym XF86AudioMute exec amixer sset 'Master' mute && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id amixer set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPrev exec playerctl previous
 ### Brightness
-bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
-bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
+# Currently broken. Something about rules to prevent the sudo need.
+bindsym --locked XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 ### Idle configuration
 exec swayidle -w \
      timeout 300 'swaylock -f -c 000000' \
@@ -107,14 +116,13 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 ### Coloring:
 # class                 border  backgr. text    indicator child_border
-client.focused          #384B55 #3F5865 #D3C6AA #3A94C5   #384B55
+client.focused          #384B55 #3F5865 #D3C6AA #3A94C5   #D3C6AA
 client.focused_inactive #414B50 #495156 #D3C6AA #414B50   #495156
 client.unfocused        #414B50 #272e33 #9DA9A0 #272E33   #272e33
 client.urgent           #2f343a #E67E80 #D3C6AA #E67E80   #E67E80
 client.placeholder      #293136 #1E2326 #D3C6AA #293136   #1E2326
 client.background       #D3C6AA
 ### Window Configuration
-default_border pixel 2  	
 ### Status Bar: `man 5 sway-bar` for more...
 bar {
     font pango:Hack 10

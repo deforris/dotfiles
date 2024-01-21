@@ -1,0 +1,62 @@
+[font]
+size = 10.0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+dynamic_title = true
+opacity = 0.8
+title = "Alacritty-Unchanged"
+
+[colors.primary]
+foreground = "#D3C6AA"
+background = "#272E33"
+
+[colors.normal]
+black = "#1E2326"
+blue = "#7FBBB3"
+cyan = "#83C092"
+green = "#A7C080"
+magenta = "#D699B6"
+red = "#E67E80"
+white = "#D3C6AA"
+yellow = "#DBBC7F"
+
+[colors.cursor]
+cursor = "#D3C6AA"
+text = "#1E2326"
+
+[colors.hints.end]
+background = "#D3C6AA"
+foreground = "#1E2326"
+
+[colors.hints.start]
+background = "#D3C6AA"
+foreground = "#1E2326"
+
+[colors.search.focused_match]
+background = "#F2EFDF"
+foreground = "#1E2326"
+
+[colors.search.matches]
+background = "#FEF2D5"
+foreground = "#1E2326"
+
+[colors.selection]
+background = "#F2EFDF"
+text = "#1E2326"
+
+[colors.vi_mode_cursor]
+cursor = "#FEF2D5"
+text = "#1E2326"
+
+[colors.footer_bar]
+foreground = "#1E2326"
+background = "#D3C6AA"
+
