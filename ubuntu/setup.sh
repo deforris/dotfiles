@@ -118,3 +118,9 @@ echo "Go install. Then continue. I dont feel like fixing this because its probab
 read
 echo "********** Finished Install of Alacritty. **********" 
 echo
+echo "********** Starting Install of Android Studio. **********" 
+apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+echo "Go do the download of the studio"
+read
+echo "********** Finished Install of Alacritty. **********" 
+echo
